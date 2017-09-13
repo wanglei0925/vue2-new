@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>new-demo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="description" content=" ">
+    <meta name="keywords" content="">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <style>
+      body,html{
+        margin:0;
+        padding:0;
+      }
+    </style>
+    <script>
+      // 设置共用的js  用来匹配不同的手机
+      var pixclPatio = 1 / window.devicePixelRatio
+      document.write('<meta name="viewport" content="width=device-width,initial-scale=' + pixclPatio + ',minimum-scale=' + pixclPatio + ',maximum-scale=' + pixclPatio + ',user-scalable=no" />');
+      setsize()
+      window.addEventListener('resize', setsize, false)
+      window.addEventListener('orientationchange', setsize, false)
+      function setsize () {
+        var html = document.getElementsByTagName('html')[0]
+        var pageWidth = html.getBoundingClientRect().width
+        html.style.fontSize = pageWidth / 16 + 'px'
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
